@@ -1,7 +1,7 @@
 version = 1
 
 [[analyzers]]
-name = "test-coverage"
+name = "go"
 enabled = true
   [analyzers.meta]
   import_root = "github.com/lkeix/inspect-coverage-saas"
