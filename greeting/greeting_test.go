@@ -17,6 +17,7 @@ func TestNewHoge(t *testing.T) {
 		})
 	}
 }
+
 func TestHogeGreeting(t *testing.T) {
 	testcases := []struct {
 		name string
@@ -27,6 +28,7 @@ func TestHogeGreeting(t *testing.T) {
 		})
 	}
 }
+
 func TestNewFuga(t *testing.T) {
 	testcases := []struct {
 		name string
@@ -37,6 +39,7 @@ func TestNewFuga(t *testing.T) {
 		})
 	}
 }
+
 func TestFugaGreeting(t *testing.T) {
 	testcases := []struct {
 		name string
