@@ -31,3 +31,8 @@ func NewFuga(name string) *Fuga {
 func (f *Fuga) Greeting() {
 	fmt.Println("hello " + f.name)
 }
+
+func SQLInjection(h string) {
+	f := NewFuga("SELECT * FROM hoge WHERE id = " + h + ";")
+	f.Greeting()
+}
