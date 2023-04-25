@@ -13,7 +13,7 @@ func TestNewHoge(t *testing.T) {
 	}{{name: ""}}
 	for _, testcase := range testcases {
 		t.Run(testcase.name, func(t *testing.T) {
-			fmt.Println("write your unit test!")
+			greeting.NewHoge("hoge")
 		})
 	}
 }
