@@ -1,7 +1,15 @@
 version = 1
 
+test_patterns = ["*_test.go"]
+
+[[analyzers]]
+name = "test-coverage"
+
 [[analyzers]]
 name = "go"
-enabled = true
+
   [analyzers.meta]
   import_root = "github.com/lkeix/inspect-coverage-saas"
+
+[[transformers]]
+name = "gofumpt"
