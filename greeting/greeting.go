@@ -1,6 +1,7 @@
 package greeting
 
 import (
+	"database/sql"
 	"fmt"
 )
 
@@ -30,4 +31,17 @@ func NewFuga(name string) *Fuga {
 
 func (f *Fuga) Greeting() {
 	fmt.Println("hello " + f.name)
+}
+
+func SQLInjection(h string) {
+	f := NewFuga("SELECT * FROM hoge WHERE id = " + h + ";")
+	f.Greeting()
+}
+
+func SQLInjectionForDB(h string) {
+	var db *sql.DB
+	rows, _ := db.Query("SELECT * FROM hoge WHERE id = " + h + ";")
+	for rows.Next() {
+
+	}
 }

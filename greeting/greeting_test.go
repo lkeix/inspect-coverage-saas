@@ -13,7 +13,7 @@ func TestNewHoge(t *testing.T) {
 	}{{name: ""}}
 	for _, testcase := range testcases {
 		t.Run(testcase.name, func(t *testing.T) {
-			fmt.Println("write your unit test!")
+			greeting.NewHoge("hoge")
 		})
 	}
 }
@@ -45,6 +45,17 @@ func TestFugaGreeting(t *testing.T) {
 		t.Run(testcase.name, func(t *testing.T) {
 			f := greeting.NewFuga("hoge")
 			f.Greeting()
+		})
+	}
+}
+
+func TestSQLInject(t *testing.T) {
+	testcases := []struct {
+		name string
+	}{{name: "test"}}
+	for _, testcase := range testcases {
+		t.Run(testcase.name, func(t *testing.T) {
+			greeting.SQLInjection("eeee;")
 		})
 	}
 }
