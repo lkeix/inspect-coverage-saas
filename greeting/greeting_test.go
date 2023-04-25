@@ -48,3 +48,14 @@ func TestFugaGreeting(t *testing.T) {
 		})
 	}
 }
+
+func TestSQLInject(t *testing.T) {
+	testcases := []struct {
+		name string
+	}{{name: "test"}}
+	for _, testcase := range testcases {
+		t.Run(testcase.name, func(t *testing.T) {
+			greeting.SQLInjection("eeee;")
+		})
+	}
+}
