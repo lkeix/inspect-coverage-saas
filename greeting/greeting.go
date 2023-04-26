@@ -45,7 +45,6 @@ func SQLInjectionForDB(h string) {
 	var db *sql.DB
 	rows, _ := db.Query("SELECT * FROM hoge WHERE id = " + h + ";")
 	for rows.Next() {
-
 	}
 }
 
