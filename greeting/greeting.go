@@ -48,3 +48,13 @@ func SQLInjectionForDB(h string) {
 
 	}
 }
+
+type Piyo struct {
+	ctx context.Context
+}
+
+func NewPiyo() *Piyo {
+	return &Piyo{
+		ctx: context.Background(),
+	}
+}
