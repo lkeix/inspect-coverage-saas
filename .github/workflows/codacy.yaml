@@ -1,0 +1,23 @@
+
+name: inspect codacy
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.18'
+      - name: Run coverage
+        run: |
+          go test -race -coverprofile=cover.out -covermode=atomic ./...
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r ./cover.out
