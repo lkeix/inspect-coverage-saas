@@ -20,4 +20,5 @@ jobs:
       - name: Run coverage
         run: |
           go test -race -coverprofile=cover.out -covermode=atomic ./...
-          CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }} bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r cover.out
+          CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }} bash <(curl -Ls https://coverage.codacy.com/get.sh) report \
+            --force-coverage-parser go -r cover.out
