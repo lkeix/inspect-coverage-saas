@@ -1,16 +1,19 @@
 package greeting
 
 import (
+	"context"
 	"database/sql"
 	"fmt"
 )
 
 type Hoge struct {
+	ctx  context.Context
 	name string
 }
 
 func NewHoge(name string) *Hoge {
 	return &Hoge{
+		ctx:  context.Background(),
 		name: name,
 	}
 }
